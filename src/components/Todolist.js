@@ -1,12 +1,12 @@
 import React from 'react'
 import Todo from './Todo'
 
-function Todolist({toDos}) {
+function Todolist({toDos, setToDos}) {
   return (
     <div>
         <div className="todos">
           {toDos.map(todo =>(
-              <Todo text={todo.text}/>
+              <Todo toDos={toDos} setToDos={setToDos} key={todo.id} text={todo.text} todo={todo}/>
           ))}
         </div>
 
