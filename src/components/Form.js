@@ -7,6 +7,7 @@ function Form({inputText,setInputText, toDos, setToDos}) {
     }
     const submitToDoHandler=(e)=>{
         setToDos([...toDos,{text:inputText, completed:false, id:Date.now()}])
+        setInputText('')
     }
   return (
       <div>
@@ -15,7 +16,7 @@ function Form({inputText,setInputText, toDos, setToDos}) {
     <h2>Whoop, it's Wednesday 🌝 ☕ </h2>
   </div>
   <div className="input">
-    <input onChange={inputTextHandler} type="text" placeholder="🖊️ Add item..." />
+    <input value={inputText} onChange={inputTextHandler} type="text" placeholder="🖊️ Add item..." />
     <i onClick={submitToDoHandler} className="fas fa-plus"></i>
   </div>
   </div>
